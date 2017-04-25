@@ -9,7 +9,7 @@ redis_url = "http://download.redis.io/releases/redis-#{redis_version}.tar.gz"
 redis_installer_directory = '/opt/redis-source'
 bin_path = '/usr/local/bin'
 
-if node[:redis][:is_redis_instance]
+if default[:redis][:is_redis_instance]
     sysctl "Enable Overcommit Memory" do
       variables 'vm.overcommit_memory' => 1
     end
